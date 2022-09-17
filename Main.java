@@ -1,5 +1,8 @@
 package com.jakestumph;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +36,7 @@ public class Main {
 
     public static void takeTest(Question[] questions){
         int score = 0;
+        shuffle(questions);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -44,5 +48,9 @@ public class Main {
             }
         }
         System.out.println("You scored: " + score + " out of " + questions.length);
+    }
+
+    public static void shuffle(Question[] questions){
+        Collections.shuffle(Arrays.asList(questions));
     }
 }
